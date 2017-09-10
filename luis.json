@@ -1,0 +1,2191 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "pi",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Aircon.Off"
+    },
+    {
+      "name": "Aircon.On"
+    },
+    {
+      "name": "Camera.CapturePhoto",
+      "inherits": {
+        "domain_name": "Camera",
+        "model_name": "CapturePhoto"
+      }
+    },
+    {
+      "name": "Camera.CaptureVideo",
+      "inherits": {
+        "domain_name": "Camera",
+        "model_name": "CaptureVideo"
+      }
+    },
+    {
+      "name": "Camera.StartBroadcasting",
+      "inherits": {
+        "domain_name": "Camera",
+        "model_name": "StartBroadcasting"
+      }
+    },
+    {
+      "name": "Camera.StopBroadcasting",
+      "inherits": {
+        "domain_name": "Camera",
+        "model_name": "StopBroadcasting"
+      }
+    },
+    {
+      "name": "Camera.StopVideoRecording",
+      "inherits": {
+        "domain_name": "Camera",
+        "model_name": "StopVideoRecording"
+      }
+    },
+    {
+      "name": "Fan.Off"
+    },
+    {
+      "name": "Fan.On"
+    },
+    {
+      "name": "Language.Change"
+    },
+    {
+      "name": "Music.DecreaseVolume",
+      "inherits": {
+        "domain_name": "Music",
+        "model_name": "DecreaseVolume"
+      }
+    },
+    {
+      "name": "Music.IncreaseVolume",
+      "inherits": {
+        "domain_name": "Music",
+        "model_name": "IncreaseVolume"
+      }
+    },
+    {
+      "name": "Music.Mute",
+      "inherits": {
+        "domain_name": "Music",
+        "model_name": "Mute"
+      }
+    },
+    {
+      "name": "Music.Pause",
+      "inherits": {
+        "domain_name": "Music",
+        "model_name": "Pause"
+      }
+    },
+    {
+      "name": "Music.PlayMusic",
+      "inherits": {
+        "domain_name": "Music",
+        "model_name": "PlayMusic"
+      }
+    },
+    {
+      "name": "Music.Repeat",
+      "inherits": {
+        "domain_name": "Music",
+        "model_name": "Repeat"
+      }
+    },
+    {
+      "name": "Music.Resume",
+      "inherits": {
+        "domain_name": "Music",
+        "model_name": "Resume"
+      }
+    },
+    {
+      "name": "Music.Stop",
+      "inherits": {
+        "domain_name": "Music",
+        "model_name": "Stop"
+      }
+    },
+    {
+      "name": "Music.Unmute",
+      "inherits": {
+        "domain_name": "Music",
+        "model_name": "Unmute"
+      }
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "Pi.Backward"
+    },
+    {
+      "name": "Pi.Forward"
+    },
+    {
+      "name": "Pi.Greetings"
+    },
+    {
+      "name": "Pi.Humidity"
+    },
+    {
+      "name": "Pi.Reject"
+    },
+    {
+      "name": "Pi.Stop"
+    },
+    {
+      "name": "Pi.Temp"
+    },
+    {
+      "name": "Pi.TurnLeft"
+    },
+    {
+      "name": "Pi.TurnRight"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Aircon"
+    },
+    {
+      "name": "Camera.AppName",
+      "inherits": {
+        "domain_name": "Camera",
+        "model_name": "AppName"
+      }
+    },
+    {
+      "name": "Fan"
+    },
+    {
+      "name": "Music.ArtistName",
+      "inherits": {
+        "domain_name": "Music",
+        "model_name": "ArtistName"
+      }
+    },
+    {
+      "name": "Music.Device"
+    },
+    {
+      "name": "Music.Genre",
+      "inherits": {
+        "domain_name": "Music",
+        "model_name": "Genre"
+      }
+    },
+    {
+      "name": "Pi.Direction"
+    },
+    {
+      "name": "Pi.Language"
+    },
+    {
+      "name": "Record"
+    },
+    {
+      "name": "Video"
+    },
+    {
+      "name": "Volume"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [
+    {
+      "name": ".*music.*",
+      "pattern": "Music.*",
+      "activated": true
+    },
+    {
+      "name": ".*off.*air.*",
+      "pattern": "Aircon.Off",
+      "activated": true
+    },
+    {
+      "name": ".*on.* air.*",
+      "pattern": "Aircon.On",
+      "activated": true
+    },
+    {
+      "name": ".*stop music.*",
+      "pattern": "Music.Stop",
+      "activated": true
+    },
+    {
+      "name": "go",
+      "pattern": "Pi.Forward",
+      "activated": true
+    }
+  ],
+  "utterances": [
+    {
+      "text": "hello",
+      "intent": "Pi.Greetings",
+      "entities": []
+    },
+    {
+      "text": "take a picture",
+      "intent": "Camera.CapturePhoto",
+      "entities": []
+    },
+    {
+      "text": "go back",
+      "intent": "Pi.Backward",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Pi.Greetings",
+      "entities": []
+    },
+    {
+      "text": "stop the music",
+      "intent": "Music.Stop",
+      "entities": [
+        {
+          "entity": "Music.Device",
+          "startPos": 9,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "turn off the fan",
+      "intent": "Fan.Off",
+      "entities": [
+        {
+          "entity": "Fan",
+          "startPos": 13,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "good day",
+      "intent": "Pi.Greetings",
+      "entities": []
+    },
+    {
+      "text": "how do you do",
+      "intent": "Pi.Greetings",
+      "entities": []
+    },
+    {
+      "text": "good morning",
+      "intent": "Pi.Greetings",
+      "entities": []
+    },
+    {
+      "text": "good afternoon",
+      "intent": "Pi.Greetings",
+      "entities": []
+    },
+    {
+      "text": "what is the room temperature",
+      "intent": "Pi.Temp",
+      "entities": []
+    },
+    {
+      "text": "good evening",
+      "intent": "Pi.Greetings",
+      "entities": []
+    },
+    {
+      "text": "is it hot",
+      "intent": "Pi.Temp",
+      "entities": []
+    },
+    {
+      "text": "how is it going",
+      "intent": "Pi.Greetings",
+      "entities": []
+    },
+    {
+      "text": "open air conditioning",
+      "intent": "Aircon.On",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 5,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "no",
+      "intent": "Pi.Reject",
+      "entities": []
+    },
+    {
+      "text": "turn down the volume",
+      "intent": "Music.DecreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "stop music",
+      "intent": "Music.Stop",
+      "entities": [
+        {
+          "entity": "Music.Device",
+          "startPos": 5,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "back",
+      "intent": "Pi.Backward",
+      "entities": []
+    },
+    {
+      "text": "go forward",
+      "intent": "Pi.Forward",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 3,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "go backward",
+      "intent": "Pi.Backward",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 3,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "turn left",
+      "intent": "Pi.TurnLeft",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 5,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "turn right",
+      "intent": "Pi.TurnRight",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 5,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "go",
+      "intent": "Pi.Forward",
+      "entities": []
+    },
+    {
+      "text": "move forward",
+      "intent": "Pi.Forward",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 5,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "left",
+      "intent": "Pi.TurnLeft",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 0,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "right",
+      "intent": "Pi.TurnRight",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 0,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "backward",
+      "intent": "Pi.Backward",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 0,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "forward",
+      "intent": "Pi.Forward",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 0,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "start recording",
+      "intent": "Camera.CaptureVideo",
+      "entities": []
+    },
+    {
+      "text": "turn on air conditioner",
+      "intent": "Aircon.On",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 8,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "turn off air conditioner",
+      "intent": "Aircon.Off",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 9,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "move backward",
+      "intent": "Pi.Backward",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 5,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "go right",
+      "intent": "Pi.TurnRight",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 3,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "go left",
+      "intent": "Pi.TurnLeft",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 3,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "good night",
+      "intent": "Pi.Greetings",
+      "entities": []
+    },
+    {
+      "text": "never",
+      "intent": "Pi.Reject",
+      "entities": []
+    },
+    {
+      "text": "stop recording",
+      "intent": "Camera.StopVideoRecording",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 5,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "turn volume up",
+      "intent": "Music.IncreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "stop the track",
+      "intent": "Music.Stop",
+      "entities": []
+    },
+    {
+      "text": "snap picture",
+      "intent": "Camera.CapturePhoto",
+      "entities": []
+    },
+    {
+      "text": "current temperature",
+      "intent": "Pi.Temp",
+      "entities": []
+    },
+    {
+      "text": "is it cold",
+      "intent": "Pi.Temp",
+      "entities": []
+    },
+    {
+      "text": "change language to chinese",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 19,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "humidity",
+      "intent": "Pi.Humidity",
+      "entities": []
+    },
+    {
+      "text": "stop the car",
+      "intent": "Pi.Stop",
+      "entities": []
+    },
+    {
+      "text": "stop the fan",
+      "intent": "Fan.Off",
+      "entities": [
+        {
+          "entity": "Fan",
+          "startPos": 9,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "go to left",
+      "intent": "Pi.TurnLeft",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 6,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "check temperature",
+      "intent": "Pi.Temp",
+      "entities": []
+    },
+    {
+      "text": "change language",
+      "intent": "Language.Change",
+      "entities": []
+    },
+    {
+      "text": "what is the temperature now",
+      "intent": "Pi.Temp",
+      "entities": []
+    },
+    {
+      "text": "stop capturing",
+      "intent": "Camera.StopVideoRecording",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 5,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "start video",
+      "intent": "Camera.CaptureVideo",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 6,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "change language to english",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 19,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "switch language",
+      "intent": "Language.Change",
+      "entities": []
+    },
+    {
+      "text": "switch language english",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "change language chinese",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "start fan",
+      "intent": "Fan.On",
+      "entities": [
+        {
+          "entity": "Fan",
+          "startPos": 6,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "resume the music",
+      "intent": "Music.Resume",
+      "entities": []
+    },
+    {
+      "text": "put this song on repeat",
+      "intent": "Music.Repeat",
+      "entities": []
+    },
+    {
+      "text": "cancel this song",
+      "intent": "Music.Stop",
+      "entities": []
+    },
+    {
+      "text": "turn off ac",
+      "intent": "Aircon.On",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 9,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "change language to japanese",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 19,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "check humidity",
+      "intent": "Pi.Humidity",
+      "entities": []
+    },
+    {
+      "text": "end recording",
+      "intent": "Camera.StopVideoRecording",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 4,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "start video recording",
+      "intent": "Camera.CaptureVideo",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 6,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "fan on",
+      "intent": "Fan.On",
+      "entities": [
+        {
+          "entity": "Fan",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "air conditioner off",
+      "intent": "Aircon.Off",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 0,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "fan off",
+      "intent": "Fan.Off",
+      "entities": [
+        {
+          "entity": "Fan",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "turn on fan",
+      "intent": "Fan.On",
+      "entities": [
+        {
+          "entity": "Fan",
+          "startPos": 8,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "change language english",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "switch off air conditioning",
+      "intent": "Aircon.Off",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 11,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "change language to spanish",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 19,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "change languages",
+      "intent": "Language.Change",
+      "entities": []
+    },
+    {
+      "text": "pause please",
+      "intent": "Music.Pause",
+      "entities": []
+    },
+    {
+      "text": "doesn't matter to me",
+      "intent": "Music.PlayMusic",
+      "entities": []
+    },
+    {
+      "text": "air conditioning on",
+      "intent": "Aircon.On",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 0,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "switch off fan",
+      "intent": "Fan.Off",
+      "entities": [
+        {
+          "entity": "Fan",
+          "startPos": 11,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "play saw soundtrack",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.Genre",
+          "startPos": 9,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "play genre jazz",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.Genre",
+          "startPos": 11,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "switch languages",
+      "intent": "Language.Change",
+      "entities": []
+    },
+    {
+      "text": "can i take pictures with the webcam",
+      "intent": "Camera.CapturePhoto",
+      "entities": []
+    },
+    {
+      "text": "can you snap a picture for me",
+      "intent": "Camera.CapturePhoto",
+      "entities": []
+    },
+    {
+      "text": "take picture on surface",
+      "intent": "Camera.CapturePhoto",
+      "entities": []
+    },
+    {
+      "text": "take a picture of brittany",
+      "intent": "Camera.CapturePhoto",
+      "entities": []
+    },
+    {
+      "text": "let me take a picture",
+      "intent": "Camera.CapturePhoto",
+      "entities": []
+    },
+    {
+      "text": "take a picture with smart cam",
+      "intent": "Camera.CapturePhoto",
+      "entities": [
+        {
+          "entity": "Camera.AppName",
+          "startPos": 20,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "can you take a snapshot with my camera",
+      "intent": "Camera.CapturePhoto",
+      "entities": [
+        {
+          "entity": "Camera.AppName",
+          "startPos": 32,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "voice snap take a picture of blue",
+      "intent": "Camera.CapturePhoto",
+      "entities": [
+        {
+          "entity": "Camera.AppName",
+          "startPos": 0,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "begin video recording",
+      "intent": "Camera.CaptureVideo",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 6,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "Record that cause",
+      "intent": "Camera.CaptureVideo",
+      "entities": []
+    },
+    {
+      "text": "start recording in five seconds",
+      "intent": "Camera.CaptureVideo",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 6,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "Please record this",
+      "intent": "Camera.CaptureVideo",
+      "entities": []
+    },
+    {
+      "text": "Sts record that",
+      "intent": "Camera.CaptureVideo",
+      "entities": []
+    },
+    {
+      "text": "Record that Xbox record that",
+      "intent": "Camera.CaptureVideo",
+      "entities": []
+    },
+    {
+      "text": "Start a broadcast on twitch",
+      "intent": "Camera.StartBroadcasting",
+      "entities": [
+        {
+          "entity": "Camera.AppName",
+          "startPos": 21,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "I want to boardcast using Ustream",
+      "intent": "Camera.StartBroadcasting",
+      "entities": [
+        {
+          "entity": "Camera.AppName",
+          "startPos": 26,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "Play start broadcast",
+      "intent": "Camera.StartBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "start broadcasting xbox one",
+      "intent": "Camera.StartBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "Let's broadcast immediately",
+      "intent": "Camera.StartBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "start broadcast for me please",
+      "intent": "Camera.StartBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "Let me start broadcasting now",
+      "intent": "Camera.StartBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "Start for me broadcast",
+      "intent": "Camera.StartBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "I want to start broadcasting my games",
+      "intent": "Camera.StartBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "I need to start my new broadcast",
+      "intent": "Camera.StartBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "stop broadcast",
+      "intent": "Camera.StopBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "stop broadcasting",
+      "intent": "Camera.StopBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "Stop for me the broadcast",
+      "intent": "Camera.StopBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "I want to stop broadcast on Ustream please",
+      "intent": "Camera.StopBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "Let's end broadcasting now",
+      "intent": "Camera.StopBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "Stop broadcasting right now",
+      "intent": "Camera.StopBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "Let me stop the broadcast now",
+      "intent": "Camera.StopBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "I need to finish the broadcast immediately",
+      "intent": "Camera.StopBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "Please stop broadcast on twitch",
+      "intent": "Camera.StopBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "Please I want to stop broadcasting",
+      "intent": "Camera.StopBroadcasting",
+      "entities": []
+    },
+    {
+      "text": "I said stop video recording",
+      "intent": "Camera.StopVideoRecording",
+      "entities": []
+    },
+    {
+      "text": "stop recording my game",
+      "intent": "Camera.StopVideoRecording",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 5,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "Can you stop recording",
+      "intent": "Camera.StopVideoRecording",
+      "entities": []
+    },
+    {
+      "text": "stop recording please",
+      "intent": "Camera.StopVideoRecording",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 5,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "stop recording this video",
+      "intent": "Camera.StopVideoRecording",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 5,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "voicesnap take a picture of my screen",
+      "intent": "Camera.CapturePhoto",
+      "entities": [
+        {
+          "entity": "Camera.AppName",
+          "startPos": 0,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "voicesnap take a picture of orange",
+      "intent": "Camera.CapturePhoto",
+      "entities": [
+        {
+          "entity": "Camera.AppName",
+          "startPos": 0,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "voicesnap take a picture of thermometer case",
+      "intent": "Camera.CapturePhoto",
+      "entities": [
+        {
+          "entity": "Camera.AppName",
+          "startPos": 0,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "Play elysium please",
+      "intent": "Music.PlayMusic",
+      "entities": []
+    },
+    {
+      "text": "launch minecraft",
+      "intent": "Music.PlayMusic",
+      "entities": []
+    },
+    {
+      "text": "Please play bleed",
+      "intent": "Music.PlayMusic",
+      "entities": []
+    },
+    {
+      "text": "Start the Playlist of name 141819",
+      "intent": "Music.PlayMusic",
+      "entities": []
+    },
+    {
+      "text": "find hindi music",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.Genre",
+          "startPos": 5,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "please pause barracuda",
+      "intent": "Music.PlayMusic",
+      "entities": []
+    },
+    {
+      "text": "Play assassin's Creed unity",
+      "intent": "Music.PlayMusic",
+      "entities": []
+    },
+    {
+      "text": "Play augustana playlist",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.ArtistName",
+          "startPos": 5,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "can you lower my volume",
+      "intent": "Music.DecreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "decrease the volume please",
+      "intent": "Music.DecreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "Please volume minus",
+      "intent": "Music.DecreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "reduce volume please",
+      "intent": "Music.DecreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "turn sound down",
+      "intent": "Music.DecreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "Volume down 20 please",
+      "intent": "Music.DecreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "volume low please",
+      "intent": "Music.DecreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "lower the volume by one",
+      "intent": "Music.DecreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "volume down please",
+      "intent": "Music.DecreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "add volume please",
+      "intent": "Music.IncreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "you need to be louder",
+      "intent": "Music.IncreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "boost headphones volume",
+      "intent": "Music.IncreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "Make this louder",
+      "intent": "Music.IncreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "Please Volume up 10",
+      "intent": "Music.IncreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "increase the ringer volume on my phone to thirty",
+      "intent": "Music.IncreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "louder if you please",
+      "intent": "Music.IncreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "Increase the volume to max",
+      "intent": "Music.IncreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "Would you please make youtube music louder",
+      "intent": "Music.IncreaseVolume",
+      "entities": []
+    },
+    {
+      "text": "halt music please",
+      "intent": "Music.Stop",
+      "entities": []
+    },
+    {
+      "text": "\"stop \"\" Because I'm happy \"\" please\"",
+      "intent": "Music.Stop",
+      "entities": []
+    },
+    {
+      "text": "Stop the playing music",
+      "intent": "Music.Stop",
+      "entities": []
+    },
+    {
+      "text": "turn off song",
+      "intent": "Music.Stop",
+      "entities": []
+    },
+    {
+      "text": "Stop Pandora now please",
+      "intent": "Music.Stop",
+      "entities": []
+    },
+    {
+      "text": "please stop the player",
+      "intent": "Music.Stop",
+      "entities": []
+    },
+    {
+      "text": "stop playing with life",
+      "intent": "Music.Stop",
+      "entities": []
+    },
+    {
+      "text": "unmute the music please",
+      "intent": "Music.Unmute",
+      "entities": []
+    },
+    {
+      "text": "Unmute volume",
+      "intent": "Music.Unmute",
+      "entities": []
+    },
+    {
+      "text": "unmute the sound",
+      "intent": "Music.Unmute",
+      "entities": []
+    },
+    {
+      "text": "unmute the volume",
+      "intent": "Music.Unmute",
+      "entities": []
+    },
+    {
+      "text": "Please unmute the music",
+      "intent": "Music.Unmute",
+      "entities": []
+    },
+    {
+      "text": "I need to unmute the volume now",
+      "intent": "Music.Unmute",
+      "entities": []
+    },
+    {
+      "text": "Can you unmute the volume for me please",
+      "intent": "Music.Unmute",
+      "entities": []
+    },
+    {
+      "text": "Let me unmute the sound please",
+      "intent": "Music.Unmute",
+      "entities": []
+    },
+    {
+      "text": "I want to unmute the music",
+      "intent": "Music.Unmute",
+      "entities": []
+    },
+    {
+      "text": "mute the volume please",
+      "intent": "Music.Mute",
+      "entities": []
+    },
+    {
+      "text": "mute spotify",
+      "intent": "Music.Mute",
+      "entities": []
+    },
+    {
+      "text": "Go mute go",
+      "intent": "Music.Mute",
+      "entities": []
+    },
+    {
+      "text": "Please mute all sounds",
+      "intent": "Music.Mute",
+      "entities": []
+    },
+    {
+      "text": "mute my microphone",
+      "intent": "Music.Mute",
+      "entities": []
+    },
+    {
+      "text": "can you mute the computer",
+      "intent": "Music.Mute",
+      "entities": []
+    },
+    {
+      "text": "Mute the volume",
+      "intent": "Music.Mute",
+      "entities": []
+    },
+    {
+      "text": "Please sound mute",
+      "intent": "Music.Mute",
+      "entities": []
+    },
+    {
+      "text": "Make the volume mute",
+      "intent": "Music.Mute",
+      "entities": []
+    },
+    {
+      "text": "mute the video please",
+      "intent": "Music.Mute",
+      "entities": []
+    },
+    {
+      "text": "spotify pause please",
+      "intent": "Music.Pause",
+      "entities": []
+    },
+    {
+      "text": "pause current playlist",
+      "intent": "Music.Pause",
+      "entities": []
+    },
+    {
+      "text": "do pausing please",
+      "intent": "Music.Pause",
+      "entities": []
+    },
+    {
+      "text": "Please pause cody",
+      "intent": "Music.Pause",
+      "entities": [
+        {
+          "entity": "Music.ArtistName",
+          "startPos": 13,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "Do pause please",
+      "intent": "Music.Pause",
+      "entities": []
+    },
+    {
+      "text": "pause media now please",
+      "intent": "Music.Pause",
+      "entities": []
+    },
+    {
+      "text": "Can you pause movies please",
+      "intent": "Music.Pause",
+      "entities": []
+    },
+    {
+      "text": "pause music for me please",
+      "intent": "Music.Pause",
+      "entities": []
+    },
+    {
+      "text": "pause the playing song please",
+      "intent": "Music.Pause",
+      "entities": []
+    },
+    {
+      "text": "i want that song to be repeated",
+      "intent": "Music.Repeat",
+      "entities": []
+    },
+    {
+      "text": "play track again",
+      "intent": "Music.Repeat",
+      "entities": []
+    },
+    {
+      "text": "repeat current playlist",
+      "intent": "Music.Repeat",
+      "entities": []
+    },
+    {
+      "text": "repeat genres please",
+      "intent": "Music.Repeat",
+      "entities": []
+    },
+    {
+      "text": "please replay",
+      "intent": "Music.Repeat",
+      "entities": []
+    },
+    {
+      "text": "Please replay it for me",
+      "intent": "Music.Repeat",
+      "entities": []
+    },
+    {
+      "text": "repeat choice play",
+      "intent": "Music.Repeat",
+      "entities": []
+    },
+    {
+      "text": "replay back please",
+      "intent": "Music.Repeat",
+      "entities": []
+    },
+    {
+      "text": "replay one before the current playing song",
+      "intent": "Music.Repeat",
+      "entities": []
+    },
+    {
+      "text": "continue playing track",
+      "intent": "Music.Resume",
+      "entities": []
+    },
+    {
+      "text": "Continue watching",
+      "intent": "Music.Resume",
+      "entities": []
+    },
+    {
+      "text": "hakuna matata hakuna resume you bastard",
+      "intent": "Music.Resume",
+      "entities": []
+    },
+    {
+      "text": "Resume episode please",
+      "intent": "Music.Resume",
+      "entities": []
+    },
+    {
+      "text": "Please resume music",
+      "intent": "Music.Resume",
+      "entities": []
+    },
+    {
+      "text": "resume playback for me please",
+      "intent": "Music.Resume",
+      "entities": []
+    },
+    {
+      "text": "resume the song i was listening to",
+      "intent": "Music.Resume",
+      "entities": []
+    },
+    {
+      "text": "unpause the paused music",
+      "intent": "Music.Resume",
+      "entities": []
+    },
+    {
+      "text": "Do resuming for the current playing music",
+      "intent": "Music.Resume",
+      "entities": []
+    },
+    {
+      "text": "play chief keef citgo please",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.ArtistName",
+          "startPos": 5,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "play james horner",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.ArtistName",
+          "startPos": 5,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "play juicy j",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.ArtistName",
+          "startPos": 5,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "play tedashii instrumentals",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.Genre",
+          "startPos": 14,
+          "endPos": 26
+        },
+        {
+          "entity": "Music.ArtistName",
+          "startPos": 5,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "play trapavelli tre by two chainz",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.ArtistName",
+          "startPos": 23,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "play beatles please",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.ArtistName",
+          "startPos": 5,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "play train please",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.ArtistName",
+          "startPos": 5,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "Play country playlist",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.Genre",
+          "startPos": 5,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "Play me a blues song",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.Genre",
+          "startPos": 10,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "play soft rock",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.Genre",
+          "startPos": 5,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "woah woah woah play eighties please",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.Genre",
+          "startPos": 20,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "play me something gangsta",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.Genre",
+          "startPos": 18,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "play some house music",
+      "intent": "Music.PlayMusic",
+      "entities": [
+        {
+          "entity": "Music.Genre",
+          "startPos": 10,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "go to right",
+      "intent": "Pi.TurnRight",
+      "entities": [
+        {
+          "entity": "Pi.Direction",
+          "startPos": 6,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "i said stop video recording",
+      "intent": "Camera.StopVideoRecording",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 12,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "can you stop recording",
+      "intent": "Camera.StopVideoRecording",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 13,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "switch language to english",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 19,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "switch language to japanese",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 19,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "switch language to chinese",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 19,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "switch language to spanish",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 19,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "switch language spanish",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "change language spanish",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "change language japanese",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 16,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "switch language chinese",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "switch language japanese",
+      "intent": "Language.Change",
+      "entities": [
+        {
+          "entity": "Pi.Language",
+          "startPos": 16,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "switch on air conditioner",
+      "intent": "Aircon.On",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 10,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "close air conditioner",
+      "intent": "Aircon.Off",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 6,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "stop air conditioning",
+      "intent": "Aircon.Off",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 5,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "turn on air conditioning",
+      "intent": "Aircon.On",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 8,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "volume down to 20",
+      "intent": "Music.IncreaseVolume",
+      "entities": [
+        {
+          "entity": "Volume",
+          "startPos": 15,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "volume up to 70 percent",
+      "intent": "Music.IncreaseVolume",
+      "entities": [
+        {
+          "entity": "Volume",
+          "startPos": 13,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "volume to 100 percent",
+      "intent": "Music.IncreaseVolume",
+      "entities": [
+        {
+          "entity": "Volume",
+          "startPos": 10,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "change volume to 50 percent",
+      "intent": "Music.IncreaseVolume",
+      "entities": [
+        {
+          "entity": "Volume",
+          "startPos": 17,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "change volume to 60%",
+      "intent": "Music.IncreaseVolume",
+      "entities": [
+        {
+          "entity": "Volume",
+          "startPos": 17,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "change volume to 30%",
+      "intent": "Music.IncreaseVolume",
+      "entities": [
+        {
+          "entity": "Volume",
+          "startPos": 17,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "volume down to 30",
+      "intent": "Music.IncreaseVolume",
+      "entities": [
+        {
+          "entity": "Volume",
+          "startPos": 15,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "reduce the volume to 50",
+      "intent": "Music.IncreaseVolume",
+      "entities": [
+        {
+          "entity": "Volume",
+          "startPos": 21,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "raise the volume to 50",
+      "intent": "Music.IncreaseVolume",
+      "entities": [
+        {
+          "entity": "Volume",
+          "startPos": 20,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "volume up to 88",
+      "intent": "Music.IncreaseVolume",
+      "entities": [
+        {
+          "entity": "Volume",
+          "startPos": 13,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "open electric fan",
+      "intent": "Fan.On",
+      "entities": [
+        {
+          "entity": "Fan",
+          "startPos": 5,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "switch on electric fan",
+      "intent": "Fan.On",
+      "entities": [
+        {
+          "entity": "Fan",
+          "startPos": 10,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "stop electric fan",
+      "intent": "Fan.Off",
+      "entities": [
+        {
+          "entity": "Fan",
+          "startPos": 5,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "back off",
+      "intent": "Pi.Backward",
+      "entities": []
+    },
+    {
+      "text": "turn off electric fan",
+      "intent": "Fan.Off",
+      "entities": [
+        {
+          "entity": "Fan",
+          "startPos": 9,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "room temperature now",
+      "intent": "Pi.Temp",
+      "entities": []
+    },
+    {
+      "text": "what is the temperature of this room",
+      "intent": "Pi.Temp",
+      "entities": []
+    },
+    {
+      "text": "check room temperature",
+      "intent": "Pi.Temp",
+      "entities": []
+    },
+    {
+      "text": "what is the humidity now",
+      "intent": "Pi.Humidity",
+      "entities": []
+    },
+    {
+      "text": "what is current humidity",
+      "intent": "Pi.Humidity",
+      "entities": []
+    },
+    {
+      "text": "what is the humidity of this room",
+      "intent": "Pi.Humidity",
+      "entities": []
+    },
+    {
+      "text": "get current humidity",
+      "intent": "Pi.Humidity",
+      "entities": []
+    },
+    {
+      "text": "please start recording",
+      "intent": "Camera.CaptureVideo",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 13,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "start recording please",
+      "intent": "Camera.CaptureVideo",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 6,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "i said start recording",
+      "intent": "Camera.CaptureVideo",
+      "entities": [
+        {
+          "entity": "Record",
+          "startPos": 13,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "could you start recording",
+      "intent": "Camera.CaptureVideo",
+      "entities": []
+    },
+    {
+      "text": "can you start video recording",
+      "intent": "Camera.CaptureVideo",
+      "entities": []
+    },
+    {
+      "text": "switch off airconditioning",
+      "intent": "Aircon.Off",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 11,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "turn on airconditioning",
+      "intent": "Aircon.On",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 8,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "turn on airconditioner",
+      "intent": "Aircon.On",
+      "entities": [
+        {
+          "entity": "Aircon",
+          "startPos": 8,
+          "endPos": 21
+        }
+      ]
+    }
+  ]
+}
