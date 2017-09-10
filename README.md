@@ -115,41 +115,41 @@ IR Transmitter Module For Arduino) that can get several meters.
 
 The "9v" battery is actually two 3.7v 18650 batteries.
 
-![Motor Schematic](/images/motor_schem.png)
+![Motor Schematic](/images/motor_schem.jpg)
 
-![Motor BreadBoard](/images/motor_bb.png)
+![Motor BreadBoard](/images/motor_bb.jpg)
 
 ### Servo
 
 The "9v" battery is actually two 3.7v 18650 batteries.
 
-![Servo Schematic](/images/servo_schem.png)
+![Servo Schematic](/images/servo_schem.jpg)
 
-![Servo BreadBoard](/images/servo_bb.png)
+![Servo BreadBoard](/images/servo_bb.jpg)
 
 ### Ultrasonic Sensor
 
-![Ultrasonic Schematic](/images/ultrasonic_schem.png)
+![Ultrasonic Schematic](/images/ultrasonic_schem.jpg)
 
-![Ultrasonic BreadBoard](/images/ultrasonic_bb.png)
+![Ultrasonic BreadBoard](/images/ultrasonic_bb.jpg)
 
 ### Temperature and Humidity Sensor
 
-![Temperature and Humidity Sensor Schematic](/images/temp_hum_schem.png)
+![Temperature and Humidity Sensor Schematic](/images/temp_hum_schem.jpg)
 
-![Temperature and Humidity Sensor BreadBoard](/images/temp_hum_bb.png)
+![Temperature and Humidity Sensor BreadBoard](/images/temp_hum_bb.jpg)
 
 ### IR Receiver
 
-![IR Receiver Schematic](/images/ir_receiver_schem.png)
+![IR Receiver Schematic](/images/ir_receiver_schem.jpg)
 
-![IR Receiver BreadBoard](/images/ir_receiver_bb.png)
+![IR Receiver BreadBoard](/images/ir_receiver_bb.jpg)
 
 ### IR Transmitter
 
-![IR Transmitter Schematic](/images/ir_sender_schem.png)
+![IR Transmitter Schematic](/images/ir_sender_schem.jpg)
 
-![IR Transmitter BreadBoard](/images/ir_sender_bb.png)
+![IR Transmitter BreadBoard](/images/ir_sender_bb.jpg)
 
 ## Set Up Raspberry Pi and Network
 
