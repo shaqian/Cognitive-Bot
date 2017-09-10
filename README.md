@@ -545,11 +545,11 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
 * [LUIS (Language Understanding Intelligent Service)](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/home)
 
- 1. Log into https://www.luis.ai/applications, click ***Import App***, select ***luis.json*** and click ***Import***.
+    1. Log into https://www.luis.ai/applications, click ***Import App***, select ***luis.json*** and click ***Import***.
 
- 2. Publish the app following: https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp
+    2. Publish the app following: https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp
 
- 3. Copy ***Endpoint url*** to ***luisURL*** in config.js.
+    3. Copy ***Endpoint url*** to ***luisURL*** in config.js.
 
 * [Translator Speech API](http://docs.microsofttranslator.com/speech-translate.html)
 
