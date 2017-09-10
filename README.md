@@ -6,43 +6,43 @@ Make a smart robot with Raspberry Pi and Azure Cognitive Services.
 
 * **Raspberry Pi v3 Model B**
 
- ![Raspberry Pi](/images/parts/rpi.jpg)
+  ![Raspberry Pi](/images/parts/rpi.jpg)
 
 * **Camera**: 8MP Raspberry Pi Camera v2
 
- ![Camera](/images/parts/cam.jpg)
+  ![Camera](/images/parts/cam.jpg)
 
 * **Micro SD Card**
 
- 8G or above.
+  8G or above.
 
- ![Micro SD Card](/images/parts/sdcard.jpg)
+  ![Micro SD Card](/images/parts/sdcard.jpg)
 
 * **USB Sound Card**
 
- I'm using [this](https://detail.tmall.com/item.htm?id=43007935397).
+  I'm using [this](https://detail.tmall.com/item.htm?id=43007935397).
 
- ![USB Sound Card](/images/parts/soundcard.jpg)
+  ![USB Sound Card](/images/parts/soundcard.jpg)
 
 * **Microphone**
 
   3.5mm jack, I'm using [this](https://detail.tmall.com/item.htm?id=21808596718).
 
- ![Microphone](/images/parts/mic.jpg)
+  ![Microphone](/images/parts/mic.jpg)
 
 * **Speaker**
 
- Mini speaker with 3.5mm jack, like:
+  Mini speaker with 3.5mm jack, like:
 
- ![Speaker](/images/parts/speaker.jpg)
+  ![Speaker](/images/parts/speaker.jpg)
 
 * **Robot Car Kit:** ZK-4WD
 
- ![Robot Car Kit](/images/parts/car.jpg)
+  ![Robot Car Kit](/images/parts/car.jpg)
 
 * **Motor driver**: L298n
 
- ![Motor driver](/images/parts/driver.jpg)
+  ![Motor driver](/images/parts/driver.jpg)
 
 * **5v Power Supply**
 
@@ -52,62 +52,62 @@ Make a smart robot with Raspberry Pi and Azure Cognitive Services.
 
 * **Battery Power Supply**
 
- Two 18650 (3.7v) batteries with battery case. Powers the motor driver.
+  Two 18650 (3.7v) batteries with battery case. Powers the motor driver.
 
- ![Battery Power Supply](/images/parts/battery.jpg)
+  ![Battery Power Supply](/images/parts/battery.jpg)
 
 * **DC-DC Converter**: LM2596S
 
- Converts 7.4v to 5v to power the servo.
+  Converts 7.4v to 5v to power the servo.
 
- ![DC-DC Converter](/images/parts/converter.jpg)
+  ![DC-DC Converter](/images/parts/converter.jpg)
 
 * **Ultrasonic Sensor**: HC-SR04
 
- Ideally with a holder too.
+  Ideally with a holder too.
 
- ![Ultrasonic Sensor](/images/parts/ultrasonic.jpg)
+  ![Ultrasonic Sensor](/images/parts/ultrasonic.jpg)
 
 * **Servo**: SG90 9g
 
- ![Servo](/images/parts/servo.jpg)
+  ![Servo](/images/parts/servo.jpg)
 
 * **Servo Mount**
 
- I'm using [this](https://item.taobao.com/item.htm?id=531675916868) (keyword: 2 Axis Servo Gimbal FPV Camera Platform), but with only 1 servo because there're only two unique channels of hardware PWM output and I need to reserve one for IR.
+  I'm using [this](https://item.taobao.com/item.htm?id=531675916868) (keyword: 2 Axis Servo Gimbal FPV Camera Platform), but with only 1 servo because there're only two unique channels of hardware PWM output and I need to reserve one for IR.
 
- ![Servo Mount](/images/parts/mount.jpg)
+  ![Servo Mount](/images/parts/mount.jpg)
 
 * **IR Transmitter**
 
- I originally used the IR module for Arduino: KY-005, but the range was short.
+  I originally used the IR module for Arduino: KY-005, but the range was short.
 
- ![IR Transmitter](/images/parts/IRTransmitter.jpg)
+  ![IR Transmitter](/images/parts/IRTransmitter.jpg)
 
- Then I found [this](https://item.taobao.com/item.htm?id=38698599143) (keyword: 1/3W High Power
+  Then I found [this](https://item.taobao.com/item.htm?id=38698599143) (keyword: 1/3W High Power
 IR Transmitter Module For Arduino) that can get several meters.
 
- ![High Power IR](/images/parts/hiIR.jpg)
+  ![High Power IR](/images/parts/hiIR.jpg)
 
 * **IR Receiver**: KY-022
 
- ![IR Receiver](/images/parts/IRReceiver.jpg)
+  ![IR Receiver](/images/parts/IRReceiver.jpg)
 
 * **Bread Board**: SYB-170
 
- ![BreadBoard](/images/parts/bread.jpg)
+  ![BreadBoard](/images/parts/bread.jpg)
 
 * **DuPont Line**
 
- 20 or 30cm male to female.
+  20 or 30cm male to female.
 
- ![DuPont Line](/images/parts/dupont.jpg)
+  ![DuPont Line](/images/parts/dupont.jpg)
 
 * **Resistors**
 
- 1/4W 1kΩ & 2kΩ.
+  1/4W 1kΩ & 2kΩ.
 
- ![Resistors](/images/parts/resistor.jpg)
+  ![Resistors](/images/parts/resistor.jpg)
 
 ## Circuit Diagram
 
@@ -530,9 +530,10 @@ sudo /etc/init.d/nginx restart
   * Or playback in a web browser:
 
     i. Download the test file and copy it to Nginx root.
-  ```
-  sudo cp ~/Cognitive-Bot/public/hls_test.html /var/www/html/hls_test.html
-  ```
+    ```
+    sudo cp ~/Cognitive-Bot/public/hls_test.html /var/www/html/hls_test.html
+    ```
+
     ii. From the Raspberry Pi or any PC that in the same network, navigate to http://[IP-of-Raspberry-Pi]/hls_test.html in a web browser.
 
 ## Create Azure Cognitive Services
@@ -551,19 +552,19 @@ sudo /etc/init.d/nginx restart
 
 * [Translator Speech API](http://docs.microsofttranslator.com/speech-translate.html)
 
- Copy the key to ***sttSubKey*** in config.js.
+  Copy the key to ***sttSubKey*** in config.js.
 
 * [Translator Text API](http://docs.microsofttranslator.com/text-translate.html)
 
- Copy the key to ***transSubKey*** in config.js.
+  Copy the key to ***transSubKey*** in config.js.
 
 * [Bing Speech API](https://docs.microsoft.com/en-us/azure/cognitive-services/speech/home)
 
- Copy the key to ***ttsSubKey*** in config.js.
+  Copy the key to ***ttsSubKey*** in config.js.
 
 * [Computer Vision API](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/home)
 
- Copy the key to ***visionKey*** in config.js.
+  Copy the key to ***visionKey*** in config.js.
 
 ## Configure Nginx
 
