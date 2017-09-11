@@ -46,9 +46,9 @@ Make a smart robot with Raspberry Pi and Azure Cognitive Services.
 
 * **5v Power Supply**
 
- Powers the Raspberry Pi. Portable power banks, like:
+  Powers the Raspberry Pi. Portable power banks, like:
 
- ![5v Power Supply](/images/parts/5v.jpg)
+  ![5v Power Supply](/images/parts/5v.jpg)
 
 * **Battery Power Supply**
 
@@ -89,7 +89,7 @@ IR Transmitter Module For Arduino) that can get several meters.
 
   ![High Power IR](/images/parts/hiIR.jpg)
 
-* **IR Receiver**: KY-022
+* **IR Receiver**: KY-022 (IR Receiver for Arduino)
 
   ![IR Receiver](/images/parts/IRReceiver.jpg)
 
@@ -151,7 +151,7 @@ The "9v" battery is actually two 3.7v 18650 batteries.
 
 ![IR Transmitter BreadBoard](/images/ir_sender_bb.png)
 
-## Set Up Raspberry Pi and Network
+## Set Up Raspberry Pi and Network Connection
 
 ### 1） Install OS (with a Mac)
 
@@ -399,19 +399,19 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
 1. Refer to [the circuit diagram](#ir-transmitter) and connect the wires.
 
-2. Run the following to duplicate the encode code.
+2. Run the following to duplicate the ir_encode code.
   ```
   cd ~/Cognitive-Bot/bin
   cp ir_encode.c on.c
   cp ir_encode.c off.c
   ```
 
-3. Run ```vi on.c```, and change the hex string in line 166 to what you have decoded, e.g.
+3. Run ```vi on.c```, and change the hex string in line 166 to what you have decoded, ie:
   ```
   char data[6] = {0xb2,0x4d,0x1f,0xe0,0xd8,0x27};
   ```
 
-4. Run ```vi off.c```, and change the hex string in line 166 to what you have decoded:
+4. Run ```vi off.c```, and change the hex string in line 166 to what you have decoded, ie:
   ```
   char data[6] = {0xb2,0x4d,0x7b,0x84,0xe0,0x1f};
   ```
@@ -432,7 +432,7 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
 > Raspberry Pi has a built-in 3.5mm jack for audio output but no input. I use a USB sound card for both speaker output and microphone input.
 
-1. Plug the USB sound card. Connect the microphone and speaker to the sound card.
+1. Plug the USB sound card in. Connect the microphone and speaker to the sound card.
 
 2. Run ```arecord -l``` and ```aplay -l``` and identify card number of your ***USB Audio Device***, e.g. *card 1*.
 
@@ -440,7 +440,7 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
 4. Play the test audio: ```aplay -Dplughw:[n] test.wav``` (replacing [n] with the number of USB Audio Device, e.g. *Dplughw:1*).
 
-5. To change USB sound card to be default audio device, run ```sudo vi /lib/modprobe.d/aliases.conf```, insert the following and save:
+5. To set the USB sound card to be the default audio device, run ```sudo vi /lib/modprobe.d/aliases.conf```, insert the following and save:
   ```
   options snd_usb_audio index=0
   options snd_bcm2835 index=1
@@ -549,7 +549,7 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
     2. Publish the app following: https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp
 
-    3. Copy ***Endpoint url*** to ***luisURL*** in config.js.
+    3. Uncheck ***Add verbose flag***. Copy ***Endpoint url*** to ***luisURL*** in config.js.
 
 * [Translator Speech API](http://docs.microsofttranslator.com/speech-translate.html)
 
