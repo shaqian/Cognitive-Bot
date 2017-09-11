@@ -20,8 +20,7 @@ class Control extends React.Component {
     super(props);
     this.state = {
       analyze: false,
-      description: '',
-      first: true
+      description: undefined
     };
   }
   handleAnalyze() {
@@ -84,10 +83,9 @@ class Control extends React.Component {
         if (old)
           var matches = stringSimilarity.compareTwoStrings(description, old);
         else
-          var matches = 1;
+          var matches = 0;
         console.log(matches);
-        if (matches < 0.4 || (this.state.first === true)) {
-          this.setState({first: false});
+        if (matches < 0.4) {
           this.setState({description});
           dispatch(actions.addHistory({
             type: 'droid',
