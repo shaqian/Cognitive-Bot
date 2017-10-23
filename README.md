@@ -7,9 +7,11 @@ Based on [PiBot](https://github.com/shaqian/PiBot). iOS / Android / web applicat
 ## Demo
 
 Chat with Raspberry Pi in the mobile application in multiple languages.
+
 ![App](/images/CognitiveBotApp.gif)
 
 Recognize picture in the web application using Computer Vision API.
+
 ![Vision](/images/Vision.gif)
 
 # Assembly
