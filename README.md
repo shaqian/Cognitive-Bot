@@ -1,113 +1,87 @@
 # Cognitive Bot
 
-Make a smart robot with Raspberry Pi and Azure Cognitive Services.
+Raspberry Pi robot integrated Azure Cognitive Services (Speech API, Translator API, LUIS API and Computer Vision API).
+
+Based on [PiBot](https://github.com/shaqian/PiBot). iOS / Android / web application available.
+
+## Demo
+
+Chat with Raspberry Pi in the mobile application in multiple languages.
+![App](/images/CognitiveBotApp.gif)
+
+Recognize picture in the web application using Computer Vision API.
+![Vision](/images/Vision.gif)
+
+# Assembly
+
+![Assembly](/images/assembly.gif)
 
 ## Parts list
 
 * **Raspberry Pi v3 Model B**
 
-  ![Raspberry Pi](/images/parts/rpi.jpg)
-
 * **Camera**: 8MP Raspberry Pi Camera v2
-
-  ![Camera](/images/parts/cam.jpg)
 
 * **Micro SD Card**
 
   8G or above.
 
-  ![Micro SD Card](/images/parts/sdcard.jpg)
-
 * **USB Sound Card**
 
   I'm using [this](https://detail.tmall.com/item.htm?id=43007935397).
-
-  ![USB Sound Card](/images/parts/soundcard.jpg)
 
 * **Microphone**
 
   3.5mm jack, I'm using [this](https://detail.tmall.com/item.htm?id=21808596718).
 
-  ![Microphone](/images/parts/mic.jpg)
-
 * **Speaker**
 
-  Mini speaker with 3.5mm jack, like:
-
-  ![Speaker](/images/parts/speaker.jpg)
+  Mini speaker with 3.5mm jack.
 
 * **Robot Car Kit:** ZK-4WD
 
-  ![Robot Car Kit](/images/parts/car.jpg)
-
 * **Motor driver**: L298n
-
-  ![Motor driver](/images/parts/driver.jpg)
 
 * **5v Power Supply**
 
-  Powers the Raspberry Pi. Portable power banks, like:
-
-  ![5v Power Supply](/images/parts/5v.jpg)
+  Powers the Raspberry Pi.
 
 * **Battery Power Supply**
 
   Two 18650 (3.7v) batteries with battery case. Powers the motor driver.
 
-  ![Battery Power Supply](/images/parts/battery.jpg)
-
 * **DC-DC Converter**: LM2596S
 
   Converts 7.4v to 5v to power the servo.
-
-  ![DC-DC Converter](/images/parts/converter.jpg)
 
 * **Ultrasonic Sensor**: HC-SR04
 
   Ideally with a holder too.
 
-  ![Ultrasonic Sensor](/images/parts/ultrasonic.jpg)
-
 * **Servo**: SG90 9g
-
-  ![Servo](/images/parts/servo.jpg)
 
 * **Servo Mount**
 
   I'm using [this](https://item.taobao.com/item.htm?id=531675916868) (keyword: 2 Axis Servo Gimbal FPV Camera Platform), but with only 1 servo because there're only two unique channels of hardware PWM output and I need to reserve one for IR.
 
-  ![Servo Mount](/images/parts/mount.jpg)
-
 * **IR Transmitter**
 
-  I originally used the IR module for Arduino: KY-005, but the range was short.
-
-  ![IR Transmitter](/images/parts/IRTransmitter.jpg)
+  Initially I used the IR module for Arduino: KY-005, but the range was short.
 
   Then I found [this](https://item.taobao.com/item.htm?id=38698599143) (keyword: 1/3W High Power
 IR Transmitter Module For Arduino) that can get several meters.
 
-  ![High Power IR](/images/parts/hiIR.jpg)
-
 * **IR Receiver**: KY-022 (IR Receiver for Arduino)
 
-  ![IR Receiver](/images/parts/IRReceiver.jpg)
-
 * **Bread Board**: SYB-170
-
-  ![BreadBoard](/images/parts/bread.jpg)
 
 * **DuPont Line**
 
   20 or 30cm male to female.
 
-  ![DuPont Line](/images/parts/dupont.jpg)
-
 * **Resistors**
 
   1/4W 1kΩ & 2kΩ.
-
-  ![Resistors](/images/parts/resistor.jpg)
 
 ## Circuit Diagram
 
@@ -251,6 +225,8 @@ Install the library for ALSA applications development files: ```sudo apt-get ins
 
 *avconv* is needed for converting recorded videos to .mp4 format: ```sudo apt-get install libav-tools```
 
+*mpg123* is used for playing .mp3 format music: ```sudo apt-get install mpg123```
+
 ### 5) Clone the repo
 
 ```
@@ -309,7 +285,7 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
 2. Run:
   ```
-  cd ~/Cognitive-Bot/bin
+  cd ~/Cognitive-Bot/CognitiveBotServer/bin
   chmod +x direct.py
   ```
 
@@ -338,7 +314,7 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
 3. Run:
   ```
-  cd ~/Cognitive-Bot/bin
+  cd ~/Cognitive-Bot/CognitiveBotServer/bin
   chmod +x metric_distance.py
   ```
 
@@ -356,7 +332,7 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
 2. Run:
   ```
-  cd ~/Cognitive-Bot/bin/temp_hum
+  cd ~/Cognitive-Bot/CognitiveBotServer/bin/temp_hum
   chmod +x getTemp.py
   chmod +x getHum.py
   ```
@@ -381,7 +357,7 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
 2. Run ```gpio -v``` to check if wiringPi is already installed. If not, install [Wiring Pi](http://wiringpi.com/download-and-install/).
 
-3. Run ```cd ~/Cognitive-Bot/bin```. Compile the code and generate the binary:
+3. Run ```cd ~/Cognitive-Bot/CognitiveBotServer/bin```. Compile the code and generate the binary:
   ```
   gcc ir_decode.c -lwiringPi -o decode.out
   chmod +x decode.out
@@ -401,7 +377,7 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
 2. Run the following to duplicate the ir_encode code.
   ```
-  cd ~/Cognitive-Bot/bin
+  cd ~/Cognitive-Bot/CognitiveBotServer/bin
   cp ir_encode.c on.c
   cp ir_encode.c off.c
   ```
@@ -573,13 +549,13 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
 1. Run ```sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/snippets/nginx-selfsigned.key -out /etc/nginx/snippets/nginx-selfsigned.crt``` to create the certificates used for HTTPS in nginx.
 
-2. Replace the content in ***/etc/nginx/sites-enabled/default*** with ***~/Cognitive-Bot/ngnix/default***.
+2. Replace the content in ***/etc/nginx/sites-enabled/default*** with ***~/Cognitive-Bot/CognitiveBotServer/ngnix/default***.
 
 3. Run ```sudo nginx -t``` to test the configurations. If successful, restart nginx server ```sudo /etc/init.d/nginx restart```.
 
 ## Run the Web Application
 
-1. Run ```cd ~/Cognitive-Bot;npm install``` to install all dependencies.
+1. Run ```cd ~/Cognitive-Bot/CognitiveBotServer/;npm install``` to install all dependencies.
 
 2. Start HLS video streaming:
   ```
@@ -590,11 +566,44 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
 3. To start the application, run:
   ```
-  cd ~/Cognitive-Bot
+  cd ~/Cognitive-Bot/CognitiveBotServer
   sudo npm start
   ```
 
-4. Navigate to ```http[s]://[IP-of-Raspberry-Pi]``` in a web browser (replacing IP-of-Raspberry-Pi with the actual IP address, ie: *192.168.1.16*).
+4. Navigate to ```http[s]://[IP-of-Raspberry-Pi]``` in a web browser (replacing [IP-of-Raspberry-Pi] with the actual IP address, ie: *192.168.1.16*).
+
+
+##  Run the Mobile App
+
+### iOS
+
+* Build and run in simulator:
+
+  ```
+  cd Cognitive-Bot/CognitiveBotApp
+  npm install
+  npm run ios
+  ```
+
+* Run on device:
+
+  Refer to [Running your app on iOS devices]( https://facebook.github.io/react-native/docs/running-on-device.html#running-your-app-on-ios-devices) in React Native official guide.
+
+### Android
+
+* Build and run in simulator:
+
+  ```
+  cd Cognitive-Bot/CognitiveBotApp
+  npm install
+  npm run android
+  ```
+
+* Run on device:
+
+  Refer to [Running your app on Android devices]( https://facebook.github.io/react-native/docs/running-on-device.html#running-your-app-on-android-devices) in React Native official guide.
+
+  Or use the PiBot.apk in this repo.
 
 ## Voice Control
 
