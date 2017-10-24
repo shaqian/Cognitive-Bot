@@ -605,7 +605,7 @@ git clone https://github.com/shaqian/Cognitive-Bot.git
 
   Refer to [Running your app on Android devices]( https://facebook.github.io/react-native/docs/running-on-device.html#running-your-app-on-android-devices) in React Native official guide.
 
-  Or use the PiBot.apk in this repo.
+  Or use the CognitiveBot.apk in this repo.
 
 ## Voice Control
 
